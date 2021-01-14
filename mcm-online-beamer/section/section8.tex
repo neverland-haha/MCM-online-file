@@ -1,0 +1,53 @@
+%最后的几章
+\section{参考文献}
+\subsection{使用 thebibliography }
+
+\begin{frame}[fragile]{使用thebibliography 环境}
+由于美赛中涉及到中文参考文献翻译的问题，可以先选择符合 gbt7714-2015 样式的引用方式之后，再利用翻译软件
+进行翻译，写入 bibitem 之中。
+\begin{lstlisting}[basicstyle=\tiny]
+\begin{thebibliography}{99}
+\bibitem{1} D.~E. KNUTH   The \TeX{}book  the American
+Mathematical Society and Addison-Wesley
+Publishing Company , 1984-1986.
+\bibitem{2}Lamport, Leslie,  \LaTeX{}: `` A Document Preparation System '',
+Addison-Wesley Publishing Company, 1986.
+\bibitem{3}\url{https://www.latexstudio.net/}
+\end{thebibliography}
+\end{lstlisting}
+|thebibliography| 旁的参数为参考文献的上限条数，最高为 99。如果需要引用则可以引用 |\cite{key}| 指令进行引用。
+\end{frame}
+
+\begin{frame}[fragile]{使用 bibtex 管理参考文献}
+\begin{lstlisting}
+\bibliographystyle{style}
+\bibliography{bib file}
+\end{lstlisting}
+该方法需要创建 *.bib 文件，并且需要管理 bib 文件中的文献条目，可以使用谷歌学术镜像、必应学术、百度学术、
+知网等导出 bib 条目，然后利用合适的编译链进行编译。对于美赛的参考条目，可以尝试将 author、title、journal 翻
+译改为英文，但无需使用 gbt7714 宏包。但是对于美赛中有较多的网页，引用较为不便。
+\end{frame}
+
+\section{插入代码}
+\begin{frame}[fragile]{插入代码}
+\phantom{幻影}由于美赛与国赛不同，要求不提交支撑材料，所以书写的代码需要以 lstlisting 环境插入，而使用者只
+需要将代码放入 code 文件夹中并使用 |\lstinputlisting[language=...]{./code/filename}|	
+命令就可以插入相应的代码，demo 中举了 c++以及 
+MATLAB 
+的样式，如果需要设置其他语言，可以将方括号内的 language 改为相应的语言即可。支持的语言可以利用命令 
+|texdoc listings| 查看文档的第 13 页，文档中的语言都支持。
+\end{frame}
+
+\begin{frame}{写在最后的话}
+\phantom{幻影}数学建模应该是大多数国人接触 \LaTeX 的第一次机会，当你真正会用它之后，你会爱上用它，逐
+渐摒弃 word。\LaTeX 原本是书写《程序的艺术》的排版语言，它也成为了一种艺术的程序，如果有机会继续使
+用下去，你会逐渐发现它的好处。\\
+\phantom{幻影} 回头再去看一些注意事项，你会发现文档远比百度好用，学会提问的重要性。\\
+\phantom{幻影幻影幻幻影} \textbf{欢迎关注 LaTeX 工作室的公众号}
+\begin{figure}
+\centering
+\includegraphics[scale=0.3]{gongzhonghao.jpg}
+\end{figure}
+\phantom{幻影幻影幻影} \textcolor{red}{\Large 最后祝大家在比赛中取得好成绩！}
+
+\end{frame}

@@ -1,0 +1,100 @@
+%--------------------------------------------------------插图章节-----------------------------------------------------------------------
+\section{\LaTeX 插图}
+\subsection{插图}
+
+\begin{frame}[fragile]{\LaTeX 插图}
+关于插图，也有许多的奥秘，如果不会插图建议阅读下面这篇文档。
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.2]{chatu.png}
+\end{figure}
+这篇文档应该能够解决你在建模时候的所有建模问题，合理利用即可。
+\end{frame}
+ 
+
+ \begin{frame}[fragile]{\LaTeX 插图}
+\begin{lstlisting}
+\begin{figure}[htbp]
+\centering
+\includegraphics[选项]{文件名}
+\caption{...}
+\label{...}
+\end{figure}
+\end{lstlisting}
+\begin{itemize}
+	\item 图片有矢量图和位图，矢量图建议以 *.pdf 格式插入，位图常用的有 *.png、*.jpg、*.jpeg等。并不建
+	议插入 eps 图形。
+	\item 在选项中常用的主要有 height、width、 scale、 angle 几个选项。主要控制插入图片的高度、宽度、
+	缩放的尺寸以及角度。
+	\item figure 与 table 是一种浮动体环境，\LaTeX 主要先排版文字再排版浮动题内的内容，figure 与 table 以及 
+	algorithm 环境都都有可选参数 h、t、b、p，当四个组合时排版效果最好。如果想想限定在制定位置需要使用
+	|[!htpb]|，若排版允许，则会固定位置，若页面排版不允许，则浮动体内容再次浮动
+\end{itemize}
+
+\end{frame}
+
+% %------------------------------------------------------并排子图共享一个标题---------------------------------------------------------
+\begin{frame}[fragile]{并排子图共享一个标题}
+\begin{lstlisting}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=1in]{filename}
+\hspace{1in}
+\includegraphics[width=1in]{filename} 
+\caption{Two Graphics in One Figure}
+\end{figure} \end{lstlisting}	
+常见的并排图形有3种情况，此为其中一种，即两张图共享一个 caption， |\centering| 使得图形居中, 而内部的 
+|\hspace{length}| 设置了两张图之间的水平间距，也可以使用 |\hfil| 代替，使得两张图推向两边
+\end{frame}
+
+
+\begin{frame}[fragile]{并排子图共享一个标题}
+\begin{lstlisting}
+\begin{figure}
+centering \begin{minipage}[c]{0.5\textwidth}
+\centering
+\includegraphics[width=1in]{1.jpg}
+\end{minipage}%
+\begin{minipage}[c]{0.5\textwidth}
+\centering
+\includegraphics[width=2in]{2.jpeg}
+\end{minipage}
+\caption{Centers Aligned Vertically}
+\end{figure}
+\end{lstlisting}
+其中  |minipage| 表示小页环境，它使得整行被分成几部分，而 |\textwidth| 表示整个页面版芯的宽度。需要注意的是
+在这个代码种 $\%$ 无法删去，否则第二幅图会换行。  
+\end{frame}
+
+\begin{frame}[fragile]{并列的子图}
+并列的子图可以使用 subfigure 宏包中的 |subfigure| 命令实现
+\begin{lstlisting}[basicstyle=\tiny]
+\begin{figure}
+\subfigure[Small Box with a Long Caption]
+{
+\label{fig:mini:subfig:a} %% label for first subfigure
+\begin{minipage}[b]{0.5\textwidth}
+\centering
+\includegraphics[width=1in]{filename} 
+\end{minipage}
+}% 	
+\subfigure[Big Box]
+{
+\label{fig:mini:subfig:b} %% label for second subfigure
+\begin{minipage}[b]{0.5\textwidth}
+\centering
+\includegraphics[width=1.5in]{filename} 
+\end{minipage}
+}
+\caption{Minipages Inside Subfigures}
+\label{fig:mini:subfig} %% label for entire figure
+\end{figure}
+\end{lstlisting}
+实际上也是小页环境的功劳！
+\end{frame}
+
+\begin{frame}[fragile]{插图总结}
+\phantom{幻影}实际上插图手册基本就能解决所有的问题，如果仍有问题可以在小屋的问答区或者QQ群询问。
+在这里不再列举更多图形。\\
+\phantom{幻影} 对于有强迫症的人来说，尽量适应而非尝试去改变。
+\end{frame}

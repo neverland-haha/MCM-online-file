@@ -1,0 +1,253 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+%\documentclass[compress]{beamer}
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\setbeamertemplate{background canvas}[vertical shading][bottom=red!10,top=blue!10]
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+%\usetheme{default}
+\usetheme{Madrid}
+%\usetheme{Singapore}
+%\usetheme{Warsaw}
+
+
+\setbeamertemplate{theorems}[numbered]
+%\setbeamercovered{transparent}
+\usefonttheme[onlymath]{serif}
+%\usetheme{boxes}
+%\setbeamertemplate{footline}{} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number]
+\setbeamertemplate{navigation symbols}{}
+
+}
+
+
+\usepackage{amsmath}
+%\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+%\usepackage[UTF8,fntef]{ctexcap}
+\usepackage[UTF8,noindent]{ctex}
+\usepackage[english]{babel} %show english numerate
+%\usepackage[adobefonts,punct,UTF8,indent,fancyhdr]{ctexcap}
+%\usepackage{CJKutf8}
+%\usepackage{rapfig}
+\usepackage{epsfig,amssymb,amsmath,version}
+\usepackage{amssymb,version,graphicx,fancybox,mathrsfs,multirow}
+\usepackage{epstopdf}
+\usepackage{url,hyperref}
+\usepackage{multicol}
+\usepackage{diagbox}
+\usepackage{listings}
+\usepackage{color,xcolor}
+\usepackage{ulem}
+\usepackage{cases}
+\usepackage{mathtools}
+\usepackage{zhlipsum}
+\usepackage{makecell}
+\usepackage{showexpl}
+\usepackage{shortvrb}
+\MakeShortVerb|
+
+
+%\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+%\usepackage[UTF8,noindent]{ctex}
+
+%\setbeamertemplate{footline}%{shadow theme}
+%{%
+%  \leavevmode%
+%  \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fil,rightskip=.3cm]{author in head/foot}%
+%    \usebeamerfont{author in head/foot}\insertshortauthor
+%  \end{beamercolorbox}%
+%  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+%    \usebeamerfont{title in head/foot} \hfill \insertshorttitle \hfill \insertframenumber\,/\,\inserttotalframenumber%
+%  \end{beamercolorbox}}%
+%  \vskip0pt%
+%}
+
+\setbeamertemplate{theorems}[numbered]
+\newtheorem{thm}{Theorem}
+\numberwithin{thm}{section}
+\newtheorem{defn}{Definition}
+\numberwithin{defn}{section}
+\newtheorem{lmm}{Lemma}
+\numberwithin{lmm}{section}
+\newtheorem{pro}{Proof}
+\theoremstyle{example}
+\newtheorem{exam}{Example}
+%\numberwithin{exam}{section}
+
+\setbeamertemplate{caption}[numbered]
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+\numberwithin{equation}{section}
+
+
+%\AtBeginSection[]
+%{ \begin{frame}
+%    \frametitle{目录}
+%    \tableofcontents[currentsection,currentsubsection] %hideallsubsections
+%  \end{frame}
+%  \addtocounter{framenumber}{-1}  %目录页不计算页码
+%}
+
+%\AtBeginSubsection[]
+%{
+%	\begin{frame}%[shrink]
+%    \frametitle{目录}
+%	%\thispagestyle{empty}
+%	\addtocounter{framenumber}{-1}
+%	\tableofcontents[
+%	sectionstyle=show/shaded,
+%	subsectionstyle=show/shaded/hide]
+%\end{frame}
+%}
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[美国数学建模 \LaTeX 模板使用]{美国大学生数学建模竞赛\LaTeX 模板使用指南} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{种田er} % Your name
+\institute[种田大学] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+种田大学 \\ % Your institution for the title page
+\medskip
+\url{https://www.latexstudio.net}% Your email address
+}
+\date{\today} % Date, can be changed to a custom date
+
+\graphicspath{{./Figures/}}
+
+\begin{document}
+	\lstset{	
+		firstnumber=1,
+		frame = single,
+		breaklines = true,
+		xleftmargin=0.2pt,
+		numbers=left,
+		xrightmargin=-2pt,
+		basicstyle=\small,
+		numbersep=4pt,
+		showtabs=false,
+		tabsize=4, 
+		backgroundcolor=\color{mBackground},
+		numberstyle=\itshape \tiny,
+		framesep=1pt,
+		language=TeX,
+		showstringspaces=false,	
+		keepspaces,
+		showtabs=true,
+		showspaces=false,
+		showstringspaces=false,
+	}
+\definecolor{mBackground}{RGB}{240,240,240}
+\songti
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+%\begin{frame}
+%%\frametitle{目录} % Table of contents slide, comment this block out to remove it
+%%\tableofcontents %[hideallsubsections] % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+%\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+%\section{关于\LaTeX 的前世今身}
+
+ % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are 
+% automatically printed in the table of contents as an overview of the talk
+%------------------------------------------------
+
+%\subsection{高纳德教授和\TeX} % A subsection can be created just before a set of slides with a common theme to 
+%%further %break down your presentation into chunks
+%\begin{frame}{高纳德教授和\TeX}
+%	\begin{columns}
+%		\column{0.65\textwidth}<1->
+%		\phantom{幻影}20世纪60年代，Knuth 教授准备出系列专著《计算机程序艺术》第四卷的时候，出版社拿第二
+%		卷的第二版书样过目时，他大失所望，于是他花了10 年时间手写了一个既能够科学家编排手搞，又符合出版社
+%		印刷要求的高质量的计算机排版系统。就是后来的\TeX。	\\
+%		\phantom{幻影} \textcolor{blue}{知道自己想要干什么，才能做到更有效率更有针对的学习和使用所需要的东西
+%			。}
+%		%高纳德老先生的图片
+%		\column{0.35\textwidth}<1->
+%		\includegraphics[width=0.9\textwidth,totalheight=0.45\textheight]{gaonade.jpg} 
+%		%
+%	\end{columns}	
+%	~\\[1cm]
+%	{	\centering 
+%		\phantom{哈}
+%		\textcolor{red}{如果说程序本身是一门艺术的话，那么\TeX 就是一门艺术的程序。}
+%	}
+%\end{frame}
+
+%\subsection{兰伯特教授和\LaTeX}
+%\begin{frame}{兰伯特教授和\LaTeX}
+%	\begin{columns}
+%			%Lamport老先生的图片
+%		\column{0.35\textwidth}<1->
+%		\includegraphics[width=0.9\textwidth,totalheight=0.45\textheight]{Lamport.jpg} 
+%		
+%		\column{0.65\textwidth}<1->
+%		\phantom{幻影} 1984 年前后， Lamport 在使用 Knuth 发明的 Plain \TeX 排版软件撰写一些并行计算方面的论
+%		文，感觉用起来不太方便，于是自己定义了一套比较高级的控制序列，并制作称新的 \TeX 格式，命名为 
+%		\LaTeX，起初\LaTeX 在计算机科学家之间流传，大家觉得 \LaTeX 比 plain \TeX 方便，就通过各种渠道向他索
+%		取。\\
+%		\phantom{幻影} \textcolor{blue}{数学建模中，内容远比形式重要，但是格式却不能不顾。}
+%		\end{columns}	
+%		%
+%		{	\bigskip
+%			\centering 
+%			\phantom{哈哈哈哈哈}
+%			\textcolor{red}{\LaTeX  出现消除了普通用户对 \TeX 的敬畏。}
+%		}
+%	
+%\end{frame}
+
+
+
+%让 LaTeX 跑起来
+\input{section/section1}
+
+%养成良好的习惯
+\input{section/section2}
+
+%模板使用
+\input{section/section3}
+
+%基础命令与环境
+\input{section/section4}
+
+%数学公式
+\input{section/section5}
+
+%表格
+\input{section/section6}
+
+%插图
+\input{section/section7}
+
+%参考文献、插入代码、写在最后的话
+\input{section/section8}
+
+
+
+\end{document}

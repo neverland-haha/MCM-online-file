@@ -1,0 +1,26 @@
+\section{美国大学生数学建模竞赛 \LaTeX 模板使用}
+\subsection{模板下载}
+\begin{frame}{模板下载}
+	美国大学生数学建模 \LaTeX 模板可以在 Github 上下载，各高校老师有时也会在自己学校的比赛群内发，或者是
+	赛前的几天在 LaTeX 小屋中会发布最新的模板，请自行关注。\\
+	如果想从互联网中获取资源可以从以下2中途径中选择:
+	\begin{itemize}
+		\item Github：\url{https://github.com/latexstudio-org/mcmthesis}
+		\item LaTeX 小屋: \url{https://www.latexstudio.net/index/details/index/mid/63}		
+	\end{itemize}
+	从 Github 下载完成后，在命令行中运行指令 |xetex mcmthesis.dtx| 以获取 demo，也可以进入 release 中直接下载
+	demo 编辑后直接生成 pdf。
+\end{frame}
+
+\subsection{模板的一些基本设置}
+\begin{frame}[fragile]{一些基本设置}
+\begin{lstlisting}
+\mcmsetup{CTeX = false,   % 使用 CTeX 套装时，设置为 true
+tcn = number, problem = C,
+sheet = true, titleinsheet = true, 
+keywordsinsheet = true,
+titlepage = false, abstract = true}
+\end{lstlisting}
+由于在 demo 中有两个摘要页，需要将其中的 |titlepage = true| 改为 |titlepage = false|
+这里仍然是建议不要使用 \textcolor{red}{CTeX套装} 以免后续出现某些致命的问题。 
+\end{frame}

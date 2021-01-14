@@ -1,0 +1,175 @@
+%表格章节
+\section{表格的使用}
+\subsection{表格的基础}
+
+%基础使用
+\begin{frame}[fragile]{表格的基础使用}
+	\phantom{幻影} \textcolor{blue}{表格是 \LaTeX 中的基础知识，同时也是难点之一，对于基础表格排版比较简单
+	而对于过宽过长的表格则需要的一定的基本功才能解决！}
+tabular  的一般格式为:
+
+\begin{lstlisting}
+\begin{tabular}[<垂直对齐>]{<列格式说明>}
+<内容>  &  <内容>  &  内容  \\
+...
+\end{tabular}
+\end{lstlisting}
+列对齐格式有：
+\begin{itemize}
+	\item l  左对齐 
+	\item c  居中
+	\item r  右对齐
+	\item |p{宽}| 固定宽度
+	\item ｜  画一条竖线
+	\item |@{<内容>}| 添加任意内容，但是会取消表列的距离
+	\item |*{<计数>}{<列格式说明>}|，符号重复多次
+\end{itemize}
+\end{frame}
+
+
+%表格的基础使用
+
+\begin{frame}[fragile]{表格的基础使用}
+
+{
+\begin{LTXexample}[pos=r,scaled]
+\begin{tabular}{|c|c|c|}
+\hline
+第一列  &  第二列  & 第三列  \\
+\hline 
+第一列  &  第二列  & 第三列  \\
+\hline 
+\end{tabular}
+\end{LTXexample}
+}
+三线表的使用
+\smallskip
+{\setlength\ResultBoxSep{3mm}
+\begin{LTXexample}[pos=r,width=4cm]
+\begin{tabular}{ccc}
+\toprule
+名称  &  作用  &  效果  \\
+\bottomrule
+a   &   b    &  c  \\
+\bottomrule[0.1em]  
+\end{tabular}
+\end{LTXexample}
+}
+\end{frame}
+
+\begin{frame}[fragile]{表格的基础使用}
+	\phantom{幻影}三线表中用 |\toprule[width]|、|\midrule{width}|、|\bottomrule{width}| 表示顶部的 rule 中部的 rule 以
+	及 底部的 rule。width 为可选参数。表格的制作方法与 普通表格相同。\\
+	\phantom{幻影}普通的表格内部无法自动换行，如果想换行，可以使用 |\makecell{...}| 命令在需要的位置上加上
+	|\\|    \\
+	\phantom{幻影}对于想要对表格进行斜线切割，可以使用 diagbox 宏包中的 |\diagbox{..}{...}..| 命令进行切割。
+	例如
+	\smallskip
+	
+{\setlength\ResultBoxSep{4mm}
+	\begin{LTXexample}[pos=r,width=3.5cm]
+\begin{tabular}{|c|c|c|}
+\hline
+\diagbox{a}{b}  &  c  & d  \\
+\hline
+d   &  e    & f	  \\
+\hline
+\end{tabular}\end{LTXexample}
+}
+\end{frame}
+
+\subsection{表格的合并与复杂表格}
+\begin{frame}[fragile]{表格的合并（列合并）}
+	\textcolor{red}{列合并：} \\
+	使用 |\multicolumn{列数}{新列格式}{内容}| 可用于将一行中几个不同的表格合并为一项。但是需要注意的是它会
+	导致原来表格的列格式失效，比如原先加入竖线则需要在命令的新列格式中加入新的竖线。
+	\smallskip
+
+{
+\setlength\ResultBoxSep{3mm}
+\begin{LTXexample}[pos=r,justification=\centering,width=3.5cm]
+\begin{tabular}{|r|r|}
+\hline
+\multicolumn{2}{|c|}{成绩}  \\ 
+\hline
+语文  &  数学  \\
+\hline
+87     &  100  \\
+\hline
+\end{tabular}
+\end{LTXexample}	
+}
+\end{frame}
+
+\begin{frame}[fragile]{表格的合并（列合并）}
+
+\textcolor{red}{如果不在 } |multicolumn| \textcolor{red}{的列选项中加入竖线则会导致这种情况的出现}
+\smallskip
+{	
+\setlength\ResultBoxSep{3mm}
+	\begin{LTXexample}[pos=r,justification=\centering,width=3.5cm]
+\begin{tabular}{|r|r|}
+\hline
+\multicolumn{2}{c}{成绩}  \\ 
+\hline
+语文  &  数学  \\
+\hline
+87     &  100  \\
+\hline
+\end{tabular}
+\end{LTXexample}	
+}
+表格中，列与列之间最小距离一半是由变量 |\tabcolsep| 和 |\arraycolsep| 控制的，在处理过长表格时可以考虑在某个
+环境中对这两个变量进行单独设置以使他作用于专门的表格。
+\end{frame}
+
+\begin{frame}[fragile]{表格的合并（行合并）}
+行合并通常需要 |\multirow|  和 |\cline{i-j}| 配合使用，它有两种基本的用法
+\begin{itemize}
+\item	|\multirow{<行数>}{<宽度>}{<内容>}| 	
+\item 	|\multirow{<行数>}*{<内容>}|
+\end{itemize}
+前者产生的表项的宽度就是输入内容的宽度，后者达到宽度后会自动换行，而表格行之间的间距由 |\arraystretch| 来
+控制，可以重新定义其比例系数。
+\bigskip
+\begin{LTXexample}[pos=r,width=4cm]
+\begin{tabular}{|c|r|r|}
+\hline
+\multirow{2}*{姓名}  &
+\multicolumn{2}{c|}{成绩}\\   
+\cline{2-3}
+& 语文   &  数学  \\  
+\hline
+张三    &   87  &  100  \\
+\hline
+\end{tabular}
+\end{LTXexample}
+\end{frame}
+
+
+\begin{frame}[fragile]{长表格与表格工具的使用}
+对于长表格，需要使用 |\longtable| 宏包，定制起来较为麻烦，更建议使用 csv 相关宏包进行定制。
+\textcolor{red}{下面是常用的表格处理工具与宏包}
+\begin{table}[htbp]
+\begin{tabular}{ll}
+	\toprule[0.1em]
+	工具		&		介绍		\\
+	\midrule
+	Excel2LaTeX  &  一款 Excel 的宏，下载方便，使用起来也比较简单	\\
+	GenerateTable &	可以在线生成 \LaTeX 表格的网站，使用起来也比较方便	\\
+	pgfplotstable	&	可以读入数据和内嵌数据排版		\\
+	csvsimple       &    通过 csv 文件保存数据后读入制作表格 	\\
+	datatool      	  &    	通过 csv 文件保存数据后读入制作表格 	\\
+	\hline
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}[fragile]{制作表格总结}
+	\begin{itemize}
+		\item  在制作表格时，最好将表格放入浮动题环境内即 table 环境内，让表格自由的浮动以适应排版
+		\item   table 环境内插入 |\caption| 和 |\label| ，label 必须放在 caption 之后
+		\item   三线表尽量不要再加多余竖线
+		\item   制作表格需要靠时间和经验的积累，一朝一夕无法学成
+	\end{itemize}
+\end{frame}

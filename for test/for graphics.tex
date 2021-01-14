@@ -1,0 +1,108 @@
+\documentclass{ctexart}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+\begin{document}
+	
+%最基本的用法
+	\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=5cm,height=5cm]{pic1.jpg}
+	\caption{测试图1}
+	\label{fig:1}
+	\end{figure}	
+
+	\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=5cm,height=5cm]{pic1.jpg}
+	\caption{测试图2}
+	\label{fig:2}
+	\end{figure}	
+
+%并排图
+	\begin{figure}[htbp]
+	\centering
+	\begin{minipage}[t]{0.5\textwidth}
+	\centering
+	 \includegraphics[width=5cm,height=5cm]{pic1}	
+	\end{minipage}%
+	\begin{minipage}[b]{0.5\textwidth}
+	\centering
+	\includegraphics[width=5cm,height=5cm]{pic2}	
+	\end{minipage}
+	\caption{测试图3}
+		\label{fig:3}
+	\end{figure}
+	
+%并排图形
+		\begin{figure}[htbp]
+		\centering
+		\begin{minipage}[c]{0.5\textwidth}
+			\centering
+			\includegraphics[width=5cm,height=5cm]{pic1}
+			\caption{测试图4}
+			\label{fig:4}
+		\end{minipage}%
+		\begin{minipage}[c]{0.5\textwidth}
+			\centering
+			\includegraphics[width=5cm,height=5cm]{pic2}	
+			\caption{测试图5}
+			\label{fig:5}
+		\end{minipage}
+	\end{figure}
+
+%并排子图
+\begin{figure}[htbp]
+	\subfigure[balala]{
+	\label{fig:mig:sub:a} 
+	\begin{minipage}[t]{0.5\textwidth} 
+		\centering
+		\includegraphics[width=5cm,height=5cm]{pic1}
+	\end{minipage}
+	} %
+		\subfigure[balala1]{
+		\label{fig:mig:sub:b} 
+		\begin{minipage}[t]{0.5\textwidth} 
+			\centering
+			\includegraphics[width=5cm,height=5cm]{pic2}
+		\end{minipage}
+	}
+\end{figure}
+
+
+%堆叠图形
+\begin{figure}[htbp]
+	\centering 
+	\begin{minipage}[t]{0.33\textwidth}
+		\centering
+		 \includegraphics[width=1in]{pic1} 
+		 \caption{Caption 1}
+	\end{minipage}%			%第一张图
+	\hspace{0.03\textwidth}	%水平间距
+	\begin{minipage}[t]{0.33\textwidth}
+		\centering
+		\includegraphics[width=1in]{pic2} 
+		\caption{Caption 2}
+	\end{minipage}		\\[20pt]		%第二张图并换行
+	\begin{minipage}[t]{0.3\textwidth}
+		\centering
+		\includegraphics[width=1in]{pic1} 
+		\caption{Caption 3}
+	\end{minipage}%		
+\hspace{0.04\linewidth}%		
+\begin{minipage}[t]{0.3\textwidth}
+	\centering
+	\includegraphics[width=1in]{pic2} 
+	\caption{Caption 4}
+\end{minipage}%
+\hspace{0.04\linewidth}%
+\begin{minipage}[t]{0.3\textwidth}
+	\centering
+	\includegraphics[width=1in]{pic1} 
+	\caption{Caption 5}
+\end{minipage}
+\end{figure}
+
+	
+\end{document}

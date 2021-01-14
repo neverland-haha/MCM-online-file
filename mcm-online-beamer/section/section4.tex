@@ -1,0 +1,144 @@
+\section{常用的命令与环境}
+\subsection{命令与环境}
+\begin{frame}[fragile]{命令与环境}
+\begin{itemize}
+			\item 命令都以反斜线 |\ |开头，后接命令名，命令名或者是一串字母，或是单个符号。命令可以带
+			一些参数，通常用花括号括起来。如果命令参数只有一个字符（不包括空格），花括号可以省略不写。可选
+			参数(option)如果出现，则用方括号括起来。 例如  |\documentclass| 就是一个能带可选参数的命令
+			。
+			\item 环境为 |\begin{env}| 和 |\end{env}| 的形式出现，例如模板中的摘要环境:
+\begin{lstlisting}
+\begin{abstract}
+摘要内容
+\end{abstract}
+\end{lstlisting}		
+\end{itemize}
+\end{frame}
+	
+\begin{frame}[fragile]{使用宏包}
+	使用 |\usepackage[option]{package}| 加载相应的宏包。
+	宏包可以以相对简单的接口实现复杂的功能，就好比其他程序语言的 ``库'',如果需要查询所需要的功能可以使用
+\begin{lstlisting}
+texdoc package
+\end{lstlisting}
+ 	来查询你所需要的功能的实现方法。	
+ 	但是需要注意的是，有些宏包可能会出现冲突，你需要找到相应的解决办法。	\\
+ 	\textcolor{red}{建模模板中的已经加载的宏包基本已经能够满足你写建模文章的要求，若非必要，尽量不要再加载
+ 		多余的宏包，以免冲突}
+\end{frame}
+	
+\begin{frame}[fragile]{常用的命令}
+	\begin{itemize}
+		\item 换行：|\\[space]|、|\linebreak|
+		\item 分页：|\newpage|、|\pagebreak|
+		\item 空格：|\phantom{arg}、\ 、 \quad、\qquad |
+		\item 间距：|\vspace{space}|、|\hspace{space}|
+		\item 标点符号：引号需要  tab 键上面 1键 左边的按键来实现|`` ''| 来完成而并非直接中文 |shift +  "| 来实现。	\\
+		无法直接输入的标点符号:
+		\bigskip	
+		\begin{LTXexample}[pos=r]
+\# \quad \$ \quad \% \quad \& \quad
+\{  \quad \} \quad  \_ \quad 
+\textbackslash\end{LTXexample}		
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{章节层次}
+	\begin{figure}
+		\centering
+		\label{tab:leavel}
+		\begin{tabular}{llll}
+			\toprule
+			层次	&	名称	&	命令	&	说明	\\
+			\midrule	
+			-1	&	part（部分）	&	|\part|		&	可选的最高层次		\\
+			0	&	chapter（章）	&	|\chapter|	&	本模板无该曾	\\
+			1	&	section（节）	&	|\section|	  &	  \makecell[l]{ article 或 ctexart 类\\最高层}	\\
+			2 	&	subsection（小节）	&	|\subsection|	&						\\
+			3	&	subsubsection（小小节）			&	|\subsubsection|	& \makecell[l]{report,book类或\\ 
+				ctexrep,ctexbook类}		\\
+			4	&  	paragragh（段）		&  |\paragraph|						&	本模板基本不会用\\
+			5	&	subparagraph			&	|\subparagraph|				&	本模板基本不会用\\
+			\bottomrule
+			
+		\end{tabular}
+	\end{figure}
+\end{frame}
+	
+%列表环境-------------------
+\subsection{列表环境}
+\begin{frame}[fragile]{列表环境}
+列表环境有有序列表和无顺列表，在建模比赛中的假设中常常会用到列表环境。
+\begin{itemize}
+\item 有序列表
+\bigskip
+\begin{LTXexample}[pos=r]
+\begin{enumerate}
+\item 条目1
+\begin{enumerate}
+\item 条目1.1
+\item 条目1.2
+\item 条目1.3
+\end{enumerate}
+\item 条目2
+\item 条目3
+\end{enumerate}\end{LTXexample}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{列表环境}
+\begin{itemize}
+\item 无序列表
+\bigskip
+\begin{LTXexample}[pos=r]
+\begin{itemize}
+\item 条目1
+\begin{itemize}
+\item 条目1.1
+\item 条目1.2
+\item 条目1.3
+\end{itemize}
+\item 条目2
+\item 条目3
+\end{itemize}\end{LTXexample}
+\end{itemize}
+\end{frame}
+
+\subsection{字体字号}
+\begin{frame}[fragile]{字体}
+	
+	\begin{table}
+		\centering
+		\begin{tabular}{llll}
+		\toprule       
+		字体族		&	带参数命令	&	声明命令	& 	效果	\\
+		\midrule
+		罗马		&		|\textrm{<文字>}|		& |\rmfamily|	&	\textrm{Roman font}		\\
+		无衬线		&		|\textsf{<文字>}|		&|\sffamily|	&	\textsf{Sans serif font}		\\
+		打字机		&		|\texttt{<文字>}|		& |\ttfamily|	&	\texttt{Typewriter font}		\\
+		\bottomrule
+		\end{tabular}
+	\end{table}
+	
+	\begin{table}
+		\centering
+		\begin{tabular}{llll}
+			\toprule
+			字体形状	&		带参数命令	&	声明命令	& 	效果	\\
+			\midrule
+			直立			&		 |\textup{<文字>}|	&		|\upshape|		&	\textup{Upright shape}	\\
+			意大利		&		  |\textit{<文字>}|		&	   |\itshape|		 &	  \textit{Italic shape}		\\
+			倾斜			&		|\textsl{<文字>}|			&	|\slshape|			&	\textsl{Slanted shape}	\\
+			小型大写	&	 |\textsc{<文字>}|		&	|\scshape|			&\textsc{Small CAPITALS} 	\\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	预定义的字体系列有中等（medium）和加宽加（bold extended）	两类：
+	如 |\textmd{中等}|	对应 	\textmd{中等}	以及 |\textbf{加宽加粗}|对应 \textbf{加宽加粗}
+\end{frame}
+
+	\begin{frame}[fragile]{字号及特殊符号}
+		常用的字号有 |\tiny|、|\scriptsize|、|\footnotesize|、|\small|  \\
+		|\normalsize|、|\large|、|\Large|、|\LARGE|、|\huge|、|\Huge|。\\
+		也可以使用|\fontsize{大小}{行距}| 和 |\selectfont| 的组合来定义字体的大小。
+	\end{frame}

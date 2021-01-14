@@ -1,0 +1,122 @@
+\documentclass{ctexart}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{makecell}
+\usepackage{diagbox}
+\usepackage{cleveref}
+\usepackage{csvsimple}
+
+\begin{document}
+	
+%最基础的表格
+\begin{tabular}{lcr}
+	\hline
+	1 		&		2 		&   3		\\
+	\hline
+	一	  &	 	  二		&	三		\\
+	\hline
+\end{tabular}	
+
+\vspace{1em}
+\begin{tabular}{|l|c|r|}
+	\hline
+	1 		&		2 		&   3		\\
+	\hline
+	一	  &	 	  二		&	三		\\
+	\hline
+\end{tabular}		
+
+%设置间距
+\vspace{1em}
+{	\setlength\tabcolsep{3em}		% 设置水平间距，列间距的一般由 tabcolsep 和 arraycolsep
+\renewcommand{\arraystretch}{2}	%设置垂直间距
+\begin{tabular}{|l|c|r|}
+	\hline
+	1 		&		2 		&   3		\\
+	\hline
+	一	  &	 	  二		&	三		\\
+	\hline
+\end{tabular}	
+}
+
+%其他列格式以及 diagbox
+\vspace{1em}
+\begin{tabular}{|c|*{4}{c}|}
+\hline
+\diagbox{天干}{地支}   &	子	&	丑	&	寅	&	卯	\\
+\hline
+甲	&	1	&	&	51 &	\\
+乙	&	&   2	&	&	52		\\
+丙	&	13	&   &	3  &	 \\
+丁	&	&	14	&	&	4	\\
+\hline			
+\end{tabular}
+	
+
+%表格合并
+%行列合并、cline 使用
+	\vspace{1em}
+	\begin{tabular}{|c|r|c|}
+		\hline
+		\multirow{2}*{姓名}   &      \multicolumn{2}{|c|}{成绩}   	\\    	\cline{2-3}
+				&	语文				& 	数学 		\\
+		\hline
+		张三 	&		87			&     100  \\
+		\hline		
+	\end{tabular}
+
+\vspace{1em}
+	\begin{tabular}{|c|c|}
+		\hline
+		\multirowcell{3}{各科\\成绩}	
+		&78		\\	\cline{2-2}
+		&82 		\\	\cline{2-2} 
+	    &86			\\   
+	    \hline
+	\end{tabular}
+	\vspace{1em}
+	
+
+%正确书写表格	
+\begin{table}[htbp]
+\centering
+\caption{测试表}
+\label{table:1}
+\begin{tabular}{|c|r|c|}
+	\hline
+	\multirow{2}*{姓名}   &      \multicolumn{2}{|c|}{成绩}   	\\    	\cline{2-3}
+	&	语文				& 	数学 		\\
+	\hline
+	张三 	&		87			&     100  \\
+	\hline		
+\end{tabular}
+\end{table}	
+测试一下表格的引用 \cref{table:1}
+
+%csvsimple 宏包的使用
+{
+	\begin{table}[htbp]
+		\centering
+		\caption{测试表2}
+		\label{table:2}
+		\csvautobooktabular{csvtest1.csv}
+	\end{table}
+}
+
+
+\vspace{1em}
+%测试csvautobooktabular
+{
+\begin{table}[htbp]
+\centering
+	\caption{测试表3}
+	\label{table:3}
+ \csvautobooktabular[]{csvtest.csv}
+\end{table}
+}
+
+
+
+	
+\end{document}

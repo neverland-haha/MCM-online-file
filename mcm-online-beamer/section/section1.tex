@@ -1,0 +1,39 @@
+\section{让\LaTeX 跑起来}
+
+%------------------------------------------------第三节第一节发行版
+\subsection{发行版}
+\begin{frame}{发行版}
+	\LaTeX、\TeX 系统都是复杂的软件包，里面包含各种各样的排版引擎、编译脚本、格式转换工具、配置文件、
+	支持工具、字体以及文档。一个 \TeX 发行版就是把所有这样的部件都集合起来，打包发布的软件。
+	\begin{itemize}
+		\item \TeX Live ,跨平台，有比较齐全的宏包。
+		\item Mik \TeX 临时自动下载没有所需要的宏包，体积较小。
+		\item Mac \TeX 专门为 Mac 定制的发行版
+		\item \textcolor{red}{\sout{C\TeX}}是一款过时的发行版，早在2012年就停止维护，对于 \TeX 来说，两年一更
+		是必要的，\textcolor{red}{所以请放弃使用C\TeX。}
+	\end{itemize}
+	关于下载，可以参考王然老师写的 Install-LaTeX.pdf，在官网或者相应的镜像网站中下载，也可以参考 LaTeX 工
+	作室写的文章。\\
+	\url{https://www.latexstudio.net/archives/51801.html}，发行版下载完成后，请在命令行中使用 |tex -v| 检查是否安/
+	装成功。
+\end{frame}
+
+%------------------------------------------------第三节第二节编辑器
+\subsection{编辑器}
+\begin{frame}{编辑器}
+	\begin{itemize}
+		\item 命令行，用命令行进行编译能够让人能够更加理解编译的链条。
+		\item WinEdt，收费软件，推荐购买后使用，对初学者界面友好。
+		\item TeXworks -常见的 TeX 套装都自带这款编辑器，界面比较清爽，支持代码和 pdf 查看，左右分屏显示。
+		\item TeXStudio  开源免费的编辑器，界面集成度好。
+		\item Vscode 轻量级的编辑器，可以在内写多种语言，但是配置稍许麻烦。
+		\item Sublime 与前者一样，也是一款轻量级的编辑器，可以在内书写多种语言，但是同样配置稍许麻烦。
+	\end{itemize}
+	\begin{itemize}
+		\item overleaf 在线编辑 \LaTeX 的网站，投稿人常用的网站，能够省去配置的烦恼，但是由于内地使用不稳定，
+		需要按照自己的情况选取。
+	\end{itemize}
+	
+	\textcolor{red}{如果发行版与编辑器是飞机和引擎的话，那么发行版就是引擎，它让飞机飞起来，而飞机只是一
+		个外框，它并不起决定作用。}
+\end{frame}

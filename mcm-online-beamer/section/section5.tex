@@ -1,0 +1,127 @@
+%数学公式部分章节
+\section{数学公式}
+\subsection{如何学习数学公式}
+
+\begin{frame}[fragile]{数学公式}
+	\begin{figure}
+		\centering
+		\includegraphics[width=4cm,height=5cm]{lshort-math.png}		
+		\hspace{1cm}
+		\includegraphics[width=4cm,height=5cm]{math.png}	
+	\end{figure}
+\phantom{幻影}对于数学公式，并不建议直接使用外部工具来获得。可以先读 lshort-zh 中的数学公式部分的章节，
+	如果仍有问题可以阅读王昭礼老师写的数学公式排版常见问题集。\textcolor{blue}{有机会可以找几篇文章的数学
+	公式敲一敲}很快就能熟悉。对于特殊符号可以使用 |texdoc symbols| 寻找，如果仍有问题，可以去在相关的提
+	问区提问。
+\end{frame}
+
+%数学公式
+\begin{frame}[fragile]{数学公式}
+	数学模式有行内模式和行间模式，分别用 | $ $ | 和 | \[ \] | 来实现。
+	例如 |$ a+b = c $| 会显示  $a+b = c$.而 |\[ a+b = c\]|  会显示 
+	\[a+b = c\]
+	\textcolor{red}{上标与下标:}
+	\begin{itemize}
+		\item 上标通过 |arg1^{arg2}| 来实现，如果 arg2 中仅有一个字母或数字仅可以省去括号。
+		\item 下标通过 |arg1_{arg2}| 来实现，同样，如果 arg2 仅有一个字母或者数字可以省区括号。
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{分式、根式、矩阵}
+	\textcolor{red}{分式、根式、矩阵}
+	\begin{itemize}
+		\item 分式：通过 |\frac{分子}{分母}| 实现，例如 |$\frac 12$| 的效果为 $\frac 12$，在正文中可以使用 |\dfrac 12| 
+		展示正文分式。 例如 |$\dfrac 12$| 显示为 $\dfrac 12$.
+		\item  根式：通过 |\sqrt[次数]{数字}| 来实现，例如 |$\sqrt[3]{8}$| 的实现效果为 $\sqrt[3]{8}$。
+		\item 矩阵:\\
+		\begin{tabular}{lclc}
+		matrix环境	& \qquad	$\begin{matrix}	a &   b \\	c &   d 	\end{matrix}$
+		&	\qquad	bmatrix环境       &     $\begin{bmatrix}		a &   b \\c &   d 	\end{bmatrix}$		\\[1em]
+		vmatrix环境 	&	\qquad 	 	$\begin{vmatrix}		a &   b \\c &   d 	\end{vmatrix}$			
+		& \qquad pmatrix 环境	&	 $\begin{pmatrix}		a &   b \\c &   d 	\end{pmatrix}$		\\[1em]
+		Bmatrix 环境			&	\qquad 	$\begin{Bmatrix}		a &   b \\c &   d 	\end{Bmatrix}$		
+		&\qquad Vmatrix 环境			&	 	$\begin{Vmatrix}		a &   b \\c &   d 	\end{Vmatrix}$	
+		\end{tabular}
+		\begin{tabular}{llll}
+			
+		\end{tabular}
+	\end{itemize}
+	\phantom{幻影幻影幻影幻影} \textcolor{red}{\bfseries 更多简单的数学公式请参考文档。}
+\end{frame}
+
+\begin{frame}[fragile]{数学字体}
+\phantom{幻影} 数学公式中，只有默认的意大利体，数学常数 $\mathrm{e}$ 常用罗马体的 |$\mathrm{e}$|.\\
+\phantom{幻影幻影幻影} \textcolor{blue}{下面是标准 \LaTeX 默认提供的数学字母字体。}
+\begin{table}
+\begin{tabular}{lll}
+\toprule
+类别 		&	字体命令	&	输出效果	\\
+\midrule
+默认字体	&	|\mathnormal|		&		$\mathnormal{ABCDE}$		\\
+意大利体	&	|\mathitl|		&		$\mathit{ABCDE}$		\\	
+罗马体	&	|\mathrml|		&		$\mathrm{ABCDE}$		\\	
+粗体	&	|\mathbf|		&		$\mathbf{ABCDE}$		\\	
+无衬线体	&	|\mathsf|		&		$\mathsf{ABCDE}$		\\	
+打字机体	&	|\mathtt|		&		$\mathtt{ABCDE}$		\\	
+手写体（花体）		&		|\mathcal|		&		$\mathcal{ABCDE}$		\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{frame}
+
+\begin{frame}[fragile]{定理类环境}
+为方便写作，模板也定义了相应的定理类环境。
+\begin{table}
+\begin{tabular}{ccc}
+	\toprule
+	中文名称 			&			环境名称			&命令			\\
+	\midrule	
+	定理			&			Theorem				& |\begin{Theorem} ...\end{Theorem}|		\\
+	引理			&			Lemma				& |\begin{Lemma} ...\end{Lemma}|		\\
+	推论			&			Corollary			 & |\begin{Corollary} ...\end{Corollary}|	\\
+	命题			&			Proposition			&|\begin{Proposition} ...\end{Proposition}|		\\
+	定义			&			Definition			&|\begin{Definition} ...\end{Definition}|	\\
+	例子			&			Example				&|\begin{Example} ...\end{Example}|	\\
+	\bottomrule
+\end{tabular}
+\end{table}
+\begin{lstlisting}
+\begin{Example}	
+This is an example
+\label{key}
+\end{Example}
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]{稍许复杂数学公式}
+\begin{itemize}
+	\item 	多行公式可以使用  \textcolor{blue}{gather、gather\*、flaign、alignat}实现，对于 align 内部的编号可以使用
+	|\notag| 取消编号。
+	\item 拆分单个公式，拆分公式可以使用 \textcolor{blue}{split、multiline} 实现。
+	\item 将公式组合为块，可以使用 \textcolor{blue}{cases 环境、multilined、aligned等环境实现}。  \\
+\end{itemize}
+\phantom{幻影幻影} \textcolor{red}{\bfseries 更多复杂的数学公式可以参考王昭礼老师写的文档。}
+\end{frame}
+
+\begin{frame}[fragile]{数学工具}
+\phantom{幻影}如果对于数学公式真的不熟悉或者是在比赛前几天才开始学习使用模板的人来说，可以使用数学工具
+，但是总体
+上仍不建议使用数学工具，容易出现公式转换称 \LaTeX 代码之后出现问题你无法解决的问题。
+\phantom{幻影}如果仍要使用数学工具，可以使用以下的数学工具。
+	\begin{table}
+\begin{tabular}{ll}
+\toprule	
+工具		&			介绍		\\
+\midrule
+detexify	&		\makecell[l]{手写符号识别，对于个别符号\\不会输入较为有效} \\
+mathphix	&	  需要付费购买，相对较为便宜		\\
+Axmath		&	   也需要付费购买，相对来说也比较便宜	\\
+mathtype	&	    较贵，不容易承受价格		\\
+hostmath	&		在线识别工具，且免费		\\
+各个编辑器中的数学工具栏		&			需要自我探索	\\
+\bottomrule	
+\end{tabular}
+	\end{table}
+\end{frame}

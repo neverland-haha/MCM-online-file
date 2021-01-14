@@ -1,0 +1,105 @@
+%数学公式部分的讲解
+\documentclass[UTF8]{ctexart}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+\begin{document}
+	
+%%-----------------------------------------------------------上标与下标---------------------------------------------------
+
+$10^n$   \quad $a_i$ \quad    $\int_d$   \quad   $\max_i$  \quad  $a_i^{2}$   \quad $\sum_{i=1}^{n}$ \quad 
+$\sum\limits_{i=1}^n$
+	
+\[  \max_n f(n) = \sum_{i=0}^{n} A_i
+\]
+
+$\overbrace{a + b + c} = \underbrace{1+2+3}$ 
+
+
+\[ \frac 12 + \frac 1a = \frac{2+a}{2a}
+\]
+
+%开方
+\[	\sqrt[n]{\frac{x^2 + \sqrt{2}}{x+y}}
+\]	
+
+
+%%-----------------------------------------------------------矩阵---------------------------------------------------
+
+%矩阵1
+\[	
+	A  = \begin{bmatrix}
+	a_{11} &  \dots   & 	a_{1n}    \\
+				&\ddots	  &	     \vdots     \\
+	0		   &			&		a_{mn}	
+\end{bmatrix}_{n \times n}	
+\]
+
+%矩阵1 测试交叉引用
+\begin{equation}
+	A  = \begin{bmatrix}
+	a_{11} &  \dots   & 	a_{1n}    \\
+	&\ddots	  &	     \vdots     \\
+	0		   &			&		a_{mn}	
+	\end{bmatrix}_{n \times n}
+	\label{eq:2}
+\end{equation}
+
+\par  just try to  test \ref{eq:2}
+
+\par  just try to test  \autoref{eq:2}
+
+\par  just try to  test \cref{eq:2}
+
+%%----------------------------------------------多行公式-------------------------------------------------------------
+%gather 环境
+\begin{gather}
+	a + b  =   b  +  a    \label{eq:3}  \\
+	a \times b   =  b  \times a      \notag
+\end{gather}
+%引用某一行的代码
+\par just test \cref{eq:3}
+
+%align环境
+\begin{align}
+	x   &  =     t    +    \cos  t   +   1  \\
+	y   &  =    2  \sin t    
+\end{align}
+
+%align* 不进行编号
+\begin{align*}
+	x   &  =     t    +    \cos  t   +   1  \\
+	y   &  =    2  \sin t    
+\end{align*}
+
+%左右对齐
+\begin{flalign}
+x	&=	t		&		x   &  =  2   \\
+y   &=   2t      &	   y   &  =  4     
+\end{flalign}
+
+%-------------------拆分公式---------------------
+\begin{equation}	\label{eq:4}
+\begin{split}
+	\cos 2x  &=	 \cos^2 x -  \sin^2  x  \\
+	             &=  2\cos^2 x  - 1 	
+\end{split}
+\end{equation}
+
+%-------------------组合成块---------------------
+\begin{equation}	\label{eq:5}
+	D(x) =  \begin{cases}   
+		1,         &			\textit{if } x \in  \mathbb{Q}   \\
+		0, 		   &			\textit{if } x	\in    \mathbb{R}  \setminus  \mathbb{Q}
+	\end{cases}
+\end{equation}
+	
+
+
+
+
+
+	
+\end{document}
